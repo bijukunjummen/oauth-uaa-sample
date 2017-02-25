@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" layout:decorator="layout/sitelayout">
+<head>
+    <title>Authcode sample</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.css}"/>
+    <link rel="stylesheet" th:href="@{/css/application.css}"/>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap-theme.css}"/>
+
+    <script th:src="@{/webjars/jquery/3.1.1/jquery.js}"></script>
+    <script th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap.js}"></script>
+</head>
+<body>
+<div class="container-fluid" layout:fragment="content">
+
+    <div class="row">
+        <div class="col-xs-2">
+            &nbsp;
+        </div>
+        <div class="col-xs-8">
+            <h2>Access Token of the Logged In User</h2>
+            <p>Users Access Token:</p>
+            <pre th:text="${access_token}"></pre>
+        </div>
+        <div class="col-xs-2">
+            &nbsp;
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-2">
+            &nbsp;
+        </div>
+        <div class="col-xs-8">
+            <h2>Things to try:</h2>
+            <ul>
+                <li>
+                    <a href="/secured/read">Call Downstream with read scope</a>
+                </li>
+                <li>
+                    <a href="/secured/write">Call Downstream with write scope</a>
+                </li>
+                <li>
+                    <a href="/secured/invalid">Call Downstream with invalid scope</a>
+                </li>
+                <li>
+                    <a href="/logout">Log out</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-xs-2">
+            &nbsp;
+        </div>
+    </div>
+</div>
+</body>
+</html>

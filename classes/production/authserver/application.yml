@@ -1,0 +1,10 @@
+---
+logging:
+  level:
+    root: INFO
+    org.springframework.security: DEBUG
+
+security:
+  ignored: /favicon.ico, /
+  basic:
+    enabled: false

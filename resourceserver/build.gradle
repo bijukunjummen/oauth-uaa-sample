@@ -1,0 +1,8 @@
+jar {
+	baseName = 'resourceserver'
+	version = '0.0.1-SNAPSHOT'
+}
+
+dependencies {
+	compile('org.springframework.security:spring-security-jwt')
+}

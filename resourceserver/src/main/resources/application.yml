@@ -1,0 +1,23 @@
+ssoServiceUrl: http://localhost:8080/uaa
+server:
+  port: 9999
+spring:
+  thymeleaf:
+    cache: false
+security:
+  ignored: /favicon.ico, /
+  basic:
+    enabled: false
+  oauth2:
+    client:
+      client-id: resource1
+      client-secret: resource1
+    resource:
+      token-info-uri: ${ssoServiceUrl}/oauth/check_token
+      jwt:
+        key-uri: ${ssoServiceUrl}/token_key
+      user-info-uri: ${ssoServiceUrl}/userinfo
+      id: resource
+
+logging.level:
+  org.springframework.security: DEBUG
