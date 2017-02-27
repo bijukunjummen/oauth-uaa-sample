@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.oauth2.client.OAuth2ClientContext;
 import org.springframework.security.oauth2.provider.OAuth2Authentication;
 import org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationDetails;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
@@ -33,6 +34,9 @@ public class SampleController {
 
     @Value("${security.oauth2.client.clientId:client1}")
     private String clientId;
+
+    @Autowired
+    private OAuth2ClientContext oAuth2ClientContext;
 
     @Autowired
     private DownstreamServiceHandler downstreamServiceHandler;
@@ -76,14 +80,7 @@ public class SampleController {
         return "showvalue";
     }
 
-    @RequestMapping("/secured/invalid")
-    public String callInvalidScope(Model model) {
-        String received = this.downstreamServiceHandler.callInvalidScope();
-        model.addAttribute("received", received);
-        return "showvalue";
-    }
-
-    @RequestMapping(value = "/logout", method = GET)
+    @RequestMapping(value = "/userlogout", method = GET)
     public String logout(HttpServletRequest request, HttpServletResponse response) throws IOException {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         if (auth != null) {

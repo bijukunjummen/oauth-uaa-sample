@@ -22,4 +22,4 @@ security:
 
 logging.level:
   org.springframework.security: INFO
-resourceServerUrl: ${RESOURCE_URL:http://resource.me.com:9999}
+resourceServerUrl: ${RESOURCE_URL:http://localhost:9999}

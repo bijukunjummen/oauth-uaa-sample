@@ -26,7 +26,9 @@ public class OAuth2SecurityConfig extends WebSecurityConfigurerAdapter {
                     .permitAll()
                 .anyRequest()
                     .authenticated();
+
         //@formatter:on
 
     }
+
 }

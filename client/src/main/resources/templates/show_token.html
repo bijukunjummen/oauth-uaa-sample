@@ -19,13 +19,14 @@
         </div>
         <div class="col-xs-8">
             <h2>Access Token of the Logged In User</h2>
-            <p>Users Access Token:</p>
             <pre th:text="${access_token}"></pre>
         </div>
+
         <div class="col-xs-2">
             &nbsp;
         </div>
     </div>
+
     <div class="row">
         <div class="col-xs-2">
             &nbsp;
@@ -40,10 +41,10 @@
                     <a href="/secured/write">Call Downstream with write scope</a>
                 </li>
                 <li>
-                    <a href="/secured/invalid">Call Downstream with invalid scope</a>
+                    <a target="uaa" th:href="|${ssoServiceUrl}/profile|">See Profile</a>
                 </li>
                 <li>
-                    <a href="/logout">Log out</a>
+                    <a th:href="@{/userlogout}">Log out</a>
                 </li>
             </ul>
         </div>
