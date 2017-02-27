@@ -22,12 +22,4 @@ public class GreetingsController {
     public String write(Authentication authentication) {
         return String.format("Write Called: Hello %s", authentication.getCredentials());
     }
-
-
-    @PreAuthorize("#oauth2.hasScope('resource.invalid')")
-    @RequestMapping(method = RequestMethod.GET, value = "/secured/invalid")
-    @ResponseBody
-    public String invalidScope(Authentication authentication) {
-        return String.format("Invalid Scope Called: Hello %s", authentication.getCredentials());
-    }
 }
