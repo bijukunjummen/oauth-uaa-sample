@@ -66,4 +66,6 @@ cd resourceserver
 
 == Test An Authorization Code flow
 
+image::https://raw.githubusercontent.com/bijukunjummen/oauth-uaa-sample/master/flows/Authorization_Code_Flow.png[Authorization Code Grant Type]
+
 Go to UI available at http://localhost:8888/ and click the UI to access a secure page. Login with user1/user1 when prompted.
