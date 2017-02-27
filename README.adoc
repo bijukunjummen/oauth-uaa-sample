@@ -40,3 +40,27 @@ uaac member add resource.read user1
 uaac member add resource.write user1
 
 ----
+
+== Start the client
+
+
+[source, bash]
+----
+cd client
+../gradlew clean bootRun
+----
+
+
+== Start the resource Server
+
+
+[source, bash]
+----
+cd resourceserver
+../gradlew clean bootRun
+----
+
+
+== Test An Authorization Code flow
+
+Go to UI available at http://localhost:8888/ and click the UI to access a secure page. Login with user1/user1 when prompted.
