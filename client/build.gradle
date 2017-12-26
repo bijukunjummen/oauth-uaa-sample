@@ -1,7 +1,0 @@
-dependencies {
-    compile 'org.springframework.boot:spring-boot-starter-thymeleaf'
-    compile "org.thymeleaf.extras:thymeleaf-extras-springsecurity4"
-    compile("org.webjars:bootstrap:3.3.7")
-    compile("org.webjars:jquery:3.1.1")
-    compile('nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect')
-}

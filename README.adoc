@@ -9,6 +9,8 @@ Use the https://github.com/cloudfoundry/cf-uaac[uaac] command line utility to in
 
 [source, bash]
 ----
+# Target local UAA
+uaac target http://localhost:8080/uaa --skip-ssl-validation
 
 # Login as a canned client
 uaac token client get admin -s adminsecret
@@ -19,7 +21,8 @@ uaac client add client1 \
    --scope resource.read,resource.write \
    -s client1 \
    --authorized_grant_types authorization_code,refresh_token,client_credentials \
-   --authorities uaa.resource
+   --authorities uaa.resource \
+   --redirect_uri http://localhost:8888/**
 
 
 # Another client credential resource1/resource1
@@ -49,8 +52,7 @@ uaac member add resource.write user1
 
 [source, bash]
 ----
-cd client
-../gradlew clean bootRun
+./gradlew -p applications/client clean bootRun
 ----
 
 
@@ -59,8 +61,7 @@ cd client
 
 [source, bash]
 ----
-cd resourceserver
-../gradlew clean bootRun
+./gradlew -p applications/resourceserver clean bootRun
 ----
 
 
